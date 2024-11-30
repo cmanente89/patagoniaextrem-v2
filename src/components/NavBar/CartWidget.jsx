@@ -1,8 +1,12 @@
 
+import { IoCartOutline } from "react-icons/io5";
 
 const CartWidget = () => {
   return (
-    <div>CartWidget</div>
+    <div>
+      <IoCartOutline />
+      <p>0</p>
+    </div>
   )
 }
 
