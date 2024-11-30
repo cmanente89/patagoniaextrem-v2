@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <NavBar />    
-      <h2>SOY UN H2</h2>
-      <ItemListContainer />
+      <ItemListContainer greeting={"Bienvenidos a PatagoniaExtrem."}   />
     </>
   )
 }
