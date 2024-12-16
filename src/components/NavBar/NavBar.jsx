@@ -16,23 +16,23 @@ const NavBar = () => {
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li>
                   <a className="hover:text-gray-200" href="#">
-                    Paquetes
+                    Patagonia
                   </a>
                 </li>
                 <li>
                   <a className="hover:text-gray-200" href="#">
-                    Destinos
+                    Córdoba
                   </a>
                 </li>
                 <li>
                   <a className="hover:text-gray-200" href="#">
-                    NOSOTROS
+                    Noroeste
                   </a>
                 </li>
               </ul>
               {/* Nav Icons */}
               <div className="hidden xl:flex items-center space-x-5 items-center">
-                
+
                 <div className="flex items-center hover:text-gray-200">
                   <CartWidget />
                 </div>
