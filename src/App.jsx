@@ -16,9 +16,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={ <ItemListContainer greeting={"Bienvenidos a PatagoniaExtrem."} /> }/>
-        <Route />
-        {/* <ItemListContainer greeting={"Bienvenidos a PatagoniaExtrem."}   />
-        <ItemDetailContainer /> */}
+        <Route path="/category/:idCategory" element={ <ItemListContainer greeting={"Bienvenidos a PatagoniaExtrem."} /> } />
+         <Route path="/detail/:idProduct" element= {<ItemDetailContainer />} />
+
       </Routes>    
  
 

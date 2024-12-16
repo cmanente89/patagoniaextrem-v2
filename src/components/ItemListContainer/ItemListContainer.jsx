@@ -18,11 +18,11 @@ const ItemListContainer = ({ greeting }) => {
     getProducts()
       .then((data) => {
         if (idCategory) {
-          //filtrar la data por ese valor
+          //filtrar la data por ese valor y guarda en la variable de estado solo los prod filtrados
           const filterProducts = data.filter((product) => product.category === idCategory)
           setProducts(filterProducts)
         } else {
-          //guardar toda la lista de los productos
+          //guarda en la variable de estado todos los productos
           setProducts(data)
         }
       })
@@ -33,6 +33,7 @@ const ItemListContainer = ({ greeting }) => {
         console.log("termino la promesa")
       })
   }, [idCategory])
+  // si idCategory cambia el array lo detecta y ejecuta el código nuevamente
 
 
   return (

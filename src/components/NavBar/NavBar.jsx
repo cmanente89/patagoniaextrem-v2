@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
@@ -9,13 +9,13 @@ const NavBar = () => {
           {/* navbar */}
           <nav className="flex justify-between bg-gray-900 text-white w-screen">
             <div className="px-5 xl:px-12 py-6 flex w-full items-center">
-              <a className="text-3xl font-bold font-heading" href="#">
+              <Link to="/" className="text-3xl font-bold font-heading" href="#">
                 {/* <img class="h-9" src="logo.png" alt="logo"> */}
                 PatagoniaExtrem.
-              </a>
+              </Link>
               {/* Nav Links */}
 
-              {/* hacer el hover!!!!!!!!!!!!!!! */}
+              {/* hacer el hover en css !!!!!!!!!!!!!!! */}
 
 
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">

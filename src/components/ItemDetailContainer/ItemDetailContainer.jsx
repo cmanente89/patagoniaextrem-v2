@@ -7,13 +7,13 @@ import "./ItemDetailContainer.css"
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
 
-//   const { idProduct } = useParams()
+  const { idProduct } = useParams()
 
   useEffect(()=> {
 
     getProducts()
       .then( (data) => {
-        const productFind = data.find( (dataProduct) => dataProduct.id === "paq001" )
+        const productFind = data.find( (dataProduct) => dataProduct.id === idProduct )
         setProduct(productFind)
       })
 
