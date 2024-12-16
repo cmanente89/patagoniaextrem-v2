@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget"
+import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
   return (
@@ -13,22 +14,26 @@ const NavBar = () => {
                 PatagoniaExtrem.
               </a>
               {/* Nav Links */}
+
+              {/* hacer el hover!!!!!!!!!!!!!!! */}
+
+
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li>
-                  <a className="hover:text-gray-200" href="#">
+                <NavLink to="/category/patagonia" className={({isActive})=> isActive ? "category-active" : "category"}>
+                  
                     Patagonia
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-gray-200" href="#">
+                  
+                </NavLink>
+                <NavLink to="/category/cordoba" className={({isActive})=> isActive ? "category-active" : "category"}>
+                  
                     Córdoba
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-gray-200" href="#">
+                  
+                </NavLink>
+                <NavLink to="/category/noroeste" className={({isActive})=> isActive ? "category-active" : "category"}>
+                  
                     Noroeste
-                  </a>
-                </li>
+                  
+                </NavLink>
               </ul>
               {/* Nav Icons */}
               <div className="hidden xl:flex items-center space-x-5 items-center">

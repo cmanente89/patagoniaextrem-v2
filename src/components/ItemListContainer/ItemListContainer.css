@@ -1,0 +1,21 @@
+/* .itemlistcontainer {
+    display: flex;
+    flex-direction: ;
+} */
+
+.itemlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin: 30px;
+    padding: 20px;
+}
