@@ -1,20 +1,26 @@
 
 import ItemList from "./ItemList.jsx"
+import Spinner from "../Spinner/Spinner.jsx"
+
+
 import { getProducts } from "../../data/data.js"
-import "./ItemListContainer.css"
-
 import { useState, useEffect } from "react"
-
-
 import { useParams } from "react-router-dom"
+
+import "./ItemListContainer.css"
 
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])
 
+  const [loading, setLoading] = useState(false)
+
   const { idCategory } = useParams()
 
   useEffect(() => {
+
+    setLoading(true)
+
     getProducts()
       .then((data) => {
         if (idCategory) {
@@ -30,7 +36,8 @@ const ItemListContainer = ({ greeting }) => {
         console.error(error)
       })
       .finally(() => {
-        console.log("termino la promesa")
+        // console.log("termino la promesa")
+        setLoading(false)
       })
   }, [idCategory])
   // si idCategory cambia el array lo detecta y ejecuta el código nuevamente
@@ -39,7 +46,9 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className="itemlistcontainer">
       <h1 className="text-7xl p-40 font-bold flex items-center justify-center"> {greeting} </h1>
-      <ItemList products={products} />
+      {
+      loading === true ? (<Spinner />) : (<ItemList products={products} />)
+      }
 
 
     </div>

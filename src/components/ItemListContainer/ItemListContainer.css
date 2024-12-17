@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    
 
 }
 
@@ -16,6 +17,16 @@
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    height: 500px;
+    width: 600px;
     margin: 30px;
     padding: 20px;
+    border: 2px solid lightgray;
+}
+
+.img-item{
+    height:250px;
+    width: 100%;
+    object-fit: cover;
+    
 }

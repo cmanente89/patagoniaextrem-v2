@@ -4,7 +4,7 @@ const products = [
         name: "Patagonia Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 3000,
-        image: "/img/chica.png",
+        image: "/img/patagonia-1.jpg",
         category: "patagonia"
     },
     {
@@ -12,7 +12,7 @@ const products = [
         name: "Patagonia Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 6000,
-        image: "/img/chica.png",
+        image: "/img/patagonia-2.jpg",
         category: "patagonia"
     },
     {
@@ -20,7 +20,7 @@ const products = [
         name: "Córdoba Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 1500,
-        image: "/img/chica.png",
+        image: "/img/cordoba-1.jpg",
         category: "cordoba"
     },
     {
@@ -28,7 +28,7 @@ const products = [
         name: "Córdoba Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 3000,
-        image: "/img/chica.png",
+        image: "/img/cordoba-2.jpg",
         category: "cordoba"
     },
     {
@@ -36,7 +36,7 @@ const products = [
         name: "Noroeste Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 2000,
-        image: "/img/chica.png",
+        image: "/img/noroeste-1.jpg",
         category: "noroeste"
     },
     {
@@ -44,7 +44,7 @@ const products = [
         name: "Noroeste Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 4000,
-        image: "/img/chica.png",
+        image: "/img/noroeste-2.jpg",
         category: "noroeste"
     },
 ]
