@@ -1,4 +1,10 @@
+import { useState } from "react"
+
 const ItemDetail = ({ product }) => {
+
+  const [mainImage, setMainImage] = useState(product.image[0])
+
+  const secondaryImages = product.image.filter((image)=> image !== mainImage)
     return (
       <>
       <h1 className="text-7xl p-40 font-bold flex items-center justify-center">Paquete {product.name}</h1>
@@ -6,9 +12,15 @@ const ItemDetail = ({ product }) => {
         
         <div className="images-detail-container">
           <div className="secondary-images">
+            {
+              secondaryImages.map((image)=>(
+                //ver de hacerlo con el evento "onMouseEnter" con algun delay
+                <img src={image} key={image} onClick={()=>setMainImage(image)} />
+              ))
+            }
           </div>
           <div className="main-image">
-            <img src={product.image} alt="" />
+            <img src={mainImage} alt="" />
           </div>
         </div>
   
