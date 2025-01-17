@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 
-const ItemCount = ( {capacity }) => {
+const ItemCount = ( {capacity, addProduct }) => {
     const [count, setCount] = useState(1);
 
     const handleRemove = () => {
@@ -23,6 +23,7 @@ const ItemCount = ( {capacity }) => {
         <button onClick={handleRemove}>-</button>
         <p>{count}</p>
         <button onClick={handleAdd}>+</button>
+        <button onClick={()=> addProduct(count)}>Agregar Paquete</button>
 
     </div>
   )

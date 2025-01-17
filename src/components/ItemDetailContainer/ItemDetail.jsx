@@ -13,6 +13,12 @@ const ItemDetail = ({ product }) => {
   const [mainImage, setMainImage] = useState(product?.image?.[1] || '');
 
   const secondaryImages = product?.image?.filter((image, index) => index !== 1) || [];
+
+  const addProduct = (count) =>{
+    const cart = { ...product, quantity: count}
+    console.log(cart)
+
+  }
     return (
       <>
       <h1 className="text-7xl p-40 font-bold flex items-center justify-center">Paquete {product.name}</h1>
@@ -36,7 +42,7 @@ const ItemDetail = ({ product }) => {
           <h2 className="title-detail">{product.name}</h2>
           <p className="text-detail">{product.description}</p>
           <p className="text-detail">Precio: ${product.price}</p>
-          <ItemCount capacity={product.capacity} />
+          <ItemCount capacity={product.capacity} addProduct={addProduct} />
         </div>
       </div>
       </>
