@@ -1,9 +1,12 @@
+//dado que mi proyecto es sobre una agencia de turismo, en vez de "stock" pongo "capacity", para hacer referencia a los lugares disponibles en los paquetes turisticos comercializados, es virtualmente lo mismo
+
 const products = [
     {
         id: "paq001",
         name: "Patagonia Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 3000,
+        capacity: 10,
         image: ["/img/patagonia-1-1.jpg", "/img/patagonia-1-2.png", "/img/patagonia-1-3.png", "/img/patagonia-1-4.png" ],
         category: "patagonia"
     },
@@ -12,6 +15,7 @@ const products = [
         name: "Patagonia Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 6000,
+        capacity: 10,
         image: ["/img/patagonia-2-1.jpg","/img/patagonia-2-2.png", "/img/patagonia-2-3.png", "/img/patagonia-2-4.png" ],
         category: "patagonia"
     },
@@ -20,6 +24,7 @@ const products = [
         name: "Córdoba Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 1500,
+        capacity: 20,
         image: ["/img/cordoba-1-1.jpg", "/img/cordoba-1-2.png", "/img/cordoba-1-3.png", "/img/cordoba-1-4.png"],
         category: "cordoba"
     },
@@ -28,6 +33,7 @@ const products = [
         name: "Córdoba Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 3000,
+        capacity: 10,
         image: ["/img/cordoba-2-1.jpg", "/img/cordoba-2-2.png", "/img/cordoba-2-3.png", "/img/cordoba-2-4.png"],
         category: "cordoba"
     },
@@ -36,6 +42,7 @@ const products = [
         name: "Noroeste Express",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 2000,
+        capacity: 15,
         image: ["/img/noroeste-1-1.jpg", "/img/noroeste-1-2.png", "/img/noroeste-1-3.png", "/img/noroeste-1-4.png"],
         category: "noroeste"
     },
@@ -44,6 +51,7 @@ const products = [
         name: "Noroeste Premium",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate at, rem iste quia magnam assumenda. Consequatur voluptas beatae ex dolorum dolor sapiente, ipsa est nobis voluptate, odit odio harum quae.",
         price: 4000,
+        capacity: 15,
         image: ["/img/noroeste-2-1.jpg", "/img/noroeste-2-2.png", "/img/noroeste-2-3.png", "/img/noroeste-2-4.png"],
         category: "noroeste"
     },
