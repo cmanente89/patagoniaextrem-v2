@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 
-const ItemCount = ( {capacity, addProduct }) => {
+const ItemCount = ( {capacity, addProductInCart }) => {
     const [count, setCount] = useState(1);
 
     const handleRemove = () => {
@@ -23,7 +23,7 @@ const ItemCount = ( {capacity, addProduct }) => {
         <button onClick={handleRemove}>-</button>
         <p>{count}</p>
         <button onClick={handleAdd}>+</button>
-        <button onClick={()=> addProduct(count)}>Agregar Paquete</button>
+        <button onClick={()=> addProductInCart(count)}>Agregar Paquete</button>
 
     </div>
   )

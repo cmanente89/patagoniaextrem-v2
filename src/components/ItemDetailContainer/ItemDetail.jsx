@@ -1,5 +1,6 @@
 import ItemCount from "../ItemCount/ItemCount"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { CartContext } from "../../context/CartContext.jsx";
 
 const ItemDetail = ({ product }) => {
 
@@ -14,9 +15,12 @@ const ItemDetail = ({ product }) => {
 
   const secondaryImages = product?.image?.filter((image, index) => index !== 1) || [];
 
-  const addProduct = (count) =>{
-    const cart = { ...product, quantity: count}
-    console.log(cart)
+  const { addProduct } =useContext(CartContext)
+
+  const addProductInCart = (count) =>{
+    const productCart = { ...product, quantity: count}
+     
+    addProduct(productCart)
 
   }
     return (
@@ -42,7 +46,7 @@ const ItemDetail = ({ product }) => {
           <h2 className="title-detail">{product.name}</h2>
           <p className="text-detail">{product.description}</p>
           <p className="text-detail">Precio: ${product.price}</p>
-          <ItemCount capacity={product.capacity} addProduct={addProduct} />
+          <ItemCount capacity={product.capacity} addProductInCart={addProductInCart} />
         </div>
       </div>
       </>
