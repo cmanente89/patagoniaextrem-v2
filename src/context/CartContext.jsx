@@ -1,9 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const cartLocalStorage = JSON.parse(localStorage.getItem("cart-ecommerce"))
+    const [cart, setCart] = useState(cartLocalStorage ? cartLocalStorage : [])
+
+    useEffect(() => {
+        localStorage.setItem("cart-ecommerce", JSON.stringify(cart))
+    }, [cart])
+
+
 
     const addProduct = (newProduct) => {
         const index = cart.findIndex((productCart) => productCart.id === newProduct.id)
