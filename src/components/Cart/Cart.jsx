@@ -42,6 +42,7 @@ const Cart = () => {
             {/* se muestra el precio total si no hay nada en 0, ver  de sacarlo!!!! */}
 
             <h3>Total: {totalPrice()}</h3>
+            <Link to="/checkout">continuar con mi compra</Link>
             <button onClick={deleteCart}>vaciar carrito</button>
         </div>
 
