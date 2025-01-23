@@ -10,28 +10,15 @@ const CartProvider = ({ children }) => {
         localStorage.setItem("cart-ecommerce", JSON.stringify(cart))
     }, [cart])
 
-
-
     const addProduct = (newProduct) => {
         const index = cart.findIndex((productCart) => productCart.id === newProduct.id)
-        console.log(index)
         if (index === -1) {
-            //agrego el producto como nuevo
-            setCart([...cart, newProduct])
-
-
+            setCart([...cart, newProduct]) // Agrego el producto como nuevo
         } else {
-            //modifico solamente la cantidad del producto
-            const newCart = [...cart]
-            newCart[index].quantity = newCart[index].quantity + newProduct.quantity
-            //!reformar con sugar syntax
-            setCart(newCart)
+            setCart(cart.map((productCart, i) =>
+                i === index ? { ...productCart, quantity: productCart.quantity + newProduct.quantity } : productCart
+            )) // Modifico solamente la cantidad del producto usando sugar syntax
         }
-
-
-
-
-
     }
 
     const totalQuantity = () => {
@@ -44,19 +31,14 @@ const CartProvider = ({ children }) => {
         return price
     }
 
-
     const deleteProductById = (idProduct) => {
         const filterProducts = cart.filter((productCart) => productCart.id !== idProduct)
         setCart(filterProducts)
-
     }
 
     const deleteCart = () => {
         setCart([])
     }
-
-
-
 
     return (
         <CartContext.Provider value={{ cart, addProduct, totalQuantity, totalPrice, deleteProductById, deleteCart }}>

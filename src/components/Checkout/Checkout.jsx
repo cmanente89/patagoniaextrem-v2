@@ -1,11 +1,9 @@
-import React from 'react'
-import { useState, useContext } from 'react'
-import FormCheckout from './FormCheckout'
-import { CartContext } from '../../context/CartContext'
-import { Timestamp, collection, addDoc } from 'firebase/firestore'
-import db from '../../db/db.js'
-
-
+import React, { useState, useContext } from 'react';
+import FormCheckout from './FormCheckout';
+import { CartContext } from '../../context/CartContext';
+import { Timestamp, collection, addDoc } from 'firebase/firestore';
+import db from '../../db/db.js';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({
@@ -14,9 +12,8 @@ const Checkout = () => {
         email: "",
     });
 
-    const [orderId, setOrderId] = useState(null)
-
-    const { cart, totalPrice } = useContext(CartContext);
+    const [orderId, setOrderId] = useState(null);
+    const { cart, totalPrice, deleteCart } = useContext(CartContext); // Añadido deleteCart
 
     const handleChangeInput = (event) => {
         setDataForm({ ...dataForm, [event.target.name]: event.target.value });
@@ -35,38 +32,28 @@ const Checkout = () => {
 
     const uploadOrder = async (newOrder) => {
         try {
-            const ordersRef = collection(db, "orders")
-            const response = await addDoc(ordersRef, newOrder)
-            setOrderId(response.id)
+            const ordersRef = collection(db, "orders");
+            const response = await addDoc(ordersRef, newOrder);
+            setOrderId(response.id);
+            deleteCart(); // Vaciar el carrito después de subir la orden
         } catch (error) {
-            console.log(error)
-
+            console.log(error);
         }
-
-
     }
 
     return (
-
-
-
-
         <div>
             {
                 orderId ? (
                     <div className="max-w-4xl mx-auto p-8 border border-gray-300 rounded-md bg-gray-50 mt-12 text-center space-y-4">
                         <h3 className="text-xl font-bold text-gray-700">Orden subida correctamente</h3>
                         <h3 className="text-2xl font-bold text-gray-800">Número de orden: {orderId}</h3>
+                        <Link to="/">Volver al inicio</Link>
                     </div>
-
-
                 ) : (
                     <FormCheckout dataForm={dataForm} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm} />
-
                 )
             }
-
-
         </div>
     );
 };
