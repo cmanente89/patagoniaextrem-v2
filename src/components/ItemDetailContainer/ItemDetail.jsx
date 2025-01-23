@@ -35,39 +35,45 @@ const ItemDetail = ({ product }) => {
   }
   return (
     <>
-      <h1 className="text-7xl p-40 font-bold flex items-center justify-center">Paquete {product.name}</h1>
-      <div className="item-detail">
+      <h1 className="text-4xl p-10 font-bold flex items-center justify-center">Paquete {product.name}</h1>
+      <div className="item-detail flex flex-row items-start justify-center space-x-8 max-w-6xl mx-auto m-8">
 
-        <div className="images-detail-container">
-          <div className="secondary-images">
+        <div className="images-detail-container flex flex-row items-start space-x-8 m-8">
+          <div className="secondary-images flex flex-col space-y-8 m-8">
             {
               secondaryImages.map((image) => (
-                //ver de hacerlo con el evento "onMouseEnter" con algun delay
-                <img src={image} key={image} onClick={() => setMainImage(image)} />
+                <img src={image} key={image} onClick={() => setMainImage(image)} className="w-24 h-24 object-cover cursor-pointer m-4" />
               ))
             }
           </div>
-          <div className="main-image">
-            <img src={mainImage} alt="" />
+          <div className="main-image flex justify-center items-center m-8">
+            <img src={mainImage} alt="" className="w-72 h-72 object-cover" />
           </div>
         </div>
 
-        <div className="text-detail-container">
-          <h2 className="title-detail">{product.name}</h2>
-          <p className="text-detail">{product.description}</p>
-          <p className="text-detail">Precio: ${product.price}</p>
+        <div className="text-detail-container flex flex-col space-y-8 m-8">
+          <h2 className="title-detail text-2xl font-bold">{product.name}</h2>
+          <p className="text-detail text-base">{product.description}</p>
+          <p className="text-detail text-lg font-semibold">Precio: ${product.price}</p>
 
-          {
-            showItemCount === true ? (
-              <ItemCount capacity={product.capacity} addProductInCart={addProductInCart} />
-
-            ) : (
-              <Link to="/cart">Terminar mi compra</Link>
-            )
-          }
+          <div className="flex flex-row space-x-4">
+            {
+              showItemCount === true ? (
+                <ItemCount capacity={product.capacity} addProductInCart={addProductInCart} />
+              ) : (
+                <Link to="/cart" className="text-blue-500 underline">Terminar mi compra</Link>
+              )
+            }
+          </div>
         </div>
       </div>
     </>
+
+
+
+
+
+
 
   )
 }

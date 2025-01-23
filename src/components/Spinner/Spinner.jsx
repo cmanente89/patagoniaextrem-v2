@@ -2,8 +2,9 @@ import { PulseLoader } from "react-spinners";
 
 const Spinner = () => {
     return (
-        // ver como centrar, tailwind anda pero mejorar!!!
-        <PulseLoader className=" text-7xl p-40 font-bold flex items-center justify-center" />
+        <div className="fixed inset-0 flex items-center justify-center">
+            <PulseLoader size={20} className="text-9xl" />
+        </div>
     )
 }
 
