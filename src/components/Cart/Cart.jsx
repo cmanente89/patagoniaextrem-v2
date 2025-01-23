@@ -13,10 +13,16 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div>
-                <h2>Carrito vacio</h2>
-                <Link to="/">Volver al inicio</Link>
+            <div className="max-w-lg mx-auto p-12 border border-gray-300 rounded-md bg-gray-50 mt-12 text-center">
+                <div className="flex flex-col justify-around items-center space-x-6">
+                    <h2 className="text-2xl font-bold text-gray-700">Carrito vacío</h2>
+                    <Link to="/" className="text-base font-bold text-gray-700 bg-gray-200 p-3 rounded hover:bg-gray-300">
+                        Volver al inicio
+                    </Link>
+                </div>
             </div>
+
+
 
         )
     }
@@ -29,17 +35,29 @@ const Cart = () => {
                             <p className="text-base font-bold text-gray-700">{productCart.name}</p>
                             <img src={productCart.image[0]} width={100} alt="" className="rounded-md" />
                             <p className="text-base text-gray-700">Cantidad: {productCart.quantity}</p>
-                            <p className="text-base text-gray-700">Precio unitario: {productCart.price}</p>
-                            <p className="text-base text-gray-700">Subtotal: ${productCart.price * productCart.quantity}</p>
+                            <p className="text-base text-gray-700">Precio unitario:  ${productCart.price}</p>
+                            <p className="text-base text-gray-700">Subtotal:  ${productCart.price * productCart.quantity}</p>
                             <button onClick={() => deleteProductById(productCart.id)} className="text-base text-gray-700 bg-gray-200 p-2 rounded hover:bg-gray-300">Eliminar</button>
                         </li>
                     ))
                 }
             </ul>
 
-            <h3 className="text-xl font-bold text-gray-700 mt-8">Total: {totalPrice()}</h3>
-            <Link to="/checkout" className="text-blue-500 underline block mt-4">Continuar con mi compra</Link>
-            <button onClick={deleteCart} className="text-base text-gray-700 bg-gray-200 p-2 rounded hover:bg-gray-300 mt-4">Vaciar carrito</button>
+            <div className="max-w-lg mx-auto p-8 border border-gray-300 rounded-md bg-gray-50 mt-12 text-center space-y-4">
+                <h3 className="text-xl font-bold text-gray-700 mt-8">Total: ${totalPrice()}</h3>
+                <div className="flex justify-around mt-8">
+                    <Link to="/checkout" className="text-base font-bold text-gray-700 bg-gray-300 p-3 rounded-md hover:bg-gray-400 inline-block">
+                        Finalizar compra
+                    </Link>
+                    <button onClick={deleteCart} className="text-base font-bold text-gray-700 bg-gray-300 p-3 rounded-md hover:bg-gray-400">
+                        Vaciar carrito
+                    </button>
+                </div>
+            </div>
+
+
+
+
         </div>
 
 
