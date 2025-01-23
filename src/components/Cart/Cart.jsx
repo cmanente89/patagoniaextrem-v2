@@ -22,29 +22,28 @@ const Cart = () => {
         )
     }
     return (
-        <div>
-            <ul>
+        <div className="max-w-4xl mx-auto p-8">
+            <ul className="space-y-6">
                 {
                     cart.map((productCart) => (
-                        <li key={productCart.id}>
-                            <p>{productCart.name}</p>
-                            <img src={productCart.image[0]} width={100} alt="" />
-                            <p>cantidad: {productCart.quantity}</p>
-                            <p>precio unitario: {productCart.price}</p>
-                            <p>subtotal: ${productCart.price * productCart.quantity}</p>
-                            <button onClick={() => deleteProductById(productCart.id)}>eliminar</button>
-
-                            {/* implementar un subtotal!!!! */}
+                        <li key={productCart.id} className="flex flex-row items-center space-x-6 p-4 border border-gray-300 rounded-md bg-gray-50">
+                            <p className="text-base font-bold text-gray-700">{productCart.name}</p>
+                            <img src={productCart.image[0]} width={100} alt="" className="rounded-md" />
+                            <p className="text-base text-gray-700">Cantidad: {productCart.quantity}</p>
+                            <p className="text-base text-gray-700">Precio unitario: {productCart.price}</p>
+                            <p className="text-base text-gray-700">Subtotal: ${productCart.price * productCart.quantity}</p>
+                            <button onClick={() => deleteProductById(productCart.id)} className="text-base text-gray-700 bg-gray-200 p-2 rounded hover:bg-gray-300">Eliminar</button>
                         </li>
                     ))
                 }
             </ul>
-            {/* se muestra el precio total si no hay nada en 0, ver  de sacarlo!!!! */}
 
-            <h3>Total: {totalPrice()}</h3>
-            <Link to="/checkout">continuar con mi compra</Link>
-            <button onClick={deleteCart}>vaciar carrito</button>
+            <h3 className="text-xl font-bold text-gray-700 mt-8">Total: {totalPrice()}</h3>
+            <Link to="/checkout" className="text-blue-500 underline block mt-4">Continuar con mi compra</Link>
+            <button onClick={deleteCart} className="text-base text-gray-700 bg-gray-200 p-2 rounded hover:bg-gray-300 mt-4">Vaciar carrito</button>
         </div>
+
+
 
     )
 }
