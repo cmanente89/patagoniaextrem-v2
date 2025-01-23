@@ -7,9 +7,9 @@ import db from "../../db/db.js";
 import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null); // Set initial product to null
+  const [product, setProduct] = useState(null); // Establecer el producto inicial a null
   const { idProduct } = useParams();
-  const [loading, setLoading] = useState(true); // Set initial loading to true
+  const [loading, setLoading] = useState(true); // Establecer la carga inicial a true
 
   const getProduct = async () => {
     try {
@@ -18,30 +18,30 @@ const ItemDetailContainer = () => {
 
       if (dataDb.exists()) {
         const data = { id: dataDb.id, ...dataDb.data() };
-        setProduct(data); // Update the state with the fetched product
+        setProduct(data); // Actualizar el estado con el producto obtenido
       } else {
-        console.log("No such product!");
+        console.log("¡No existe tal producto!");
       }
 
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false); // Ensure loading is set to false whether there's an error or not
+      setLoading(false); // Asegurarse de que la carga se establezca en false, haya o no un error
     }
   };
 
   useEffect(() => {
-    setLoading(true); // Set loading to true when the ID changes
-    getProduct(); // Fetch the product by ID
+    setLoading(true); // Establecer la carga a true cuando cambia el ID
+    getProduct(); // Obtener el producto por ID
 
-  }, [idProduct]); // Trigger useEffect when idProduct changes
+  }, [idProduct]); // Ejecutar useEffect cuando cambia idProduct
 
   return (
     <>
       {loading ? (
         <Spinner />
       ) : (
-        product && <ItemDetail product={product} /> // Ensure product is available before rendering ItemDetail
+        product && <ItemDetail product={product} /> // Asegurarse de que el producto esté disponible antes de renderizar ItemDetail
       )}
     </>
   );

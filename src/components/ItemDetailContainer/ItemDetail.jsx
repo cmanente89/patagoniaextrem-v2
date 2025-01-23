@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
 
-  //!   Use optional chaining (?.) to safely access the image property and its elements:
 
-  //! JavaScript
-
-  // !const [mainImage, setMainImage] = useState(product?.image?.[1] || ''); 
-  // !This will prevent the error if product or product.image is undefined. The || '' provides a default value for mainImage if product.image[1] is undefined.
 
   const [mainImage, setMainImage] = useState(product?.image?.[1] || '');
 

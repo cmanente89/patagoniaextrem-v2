@@ -10,7 +10,6 @@ const Cart = () => {
 
     //early return o retorno temprano
 
-    //! armar en un componenten distinto esto de abajo
 
     if (cart.length === 0) {
         return (

@@ -4,35 +4,35 @@ import { NavLink, Link } from "react-router-dom"
 const NavBar = () => {
   return (
     <>
-      <div className="flex flex-wrap  h-auto"> {/* place-items-center */}
+      <div className="flex flex-wrap  h-auto">
         <section className="relative mx-auto">
           {/* navbar */}
           <nav className="flex justify-between bg-gray-900 text-white w-screen">
             <div className="px-5 xl:px-12 py-6 flex w-full items-center">
               <Link to="/" className="text-3xl font-bold font-heading" href="#">
-                {/* <img class="h-9" src="logo.png" alt="logo"> */}
+
                 PatagoniaExtrem.
               </Link>
               {/* Nav Links */}
 
-              {/* hacer el hover en css !!!!!!!!!!!!!!! */}
+
 
 
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <NavLink to="/category/patagonia" className={({isActive})=> isActive ? "category-active" : "category"}>
-                  
-                    Patagonia
-                  
+                <NavLink to="/category/patagonia" className={({ isActive }) => isActive ? "category-active" : "category"}>
+
+                  Patagonia
+
                 </NavLink>
-                <NavLink to="/category/cordoba" className={({isActive})=> isActive ? "category-active" : "category"}>
-                  
-                    Córdoba
-                  
+                <NavLink to="/category/cordoba" className={({ isActive }) => isActive ? "category-active" : "category"}>
+
+                  Córdoba
+
                 </NavLink>
-                <NavLink to="/category/noroeste" className={({isActive})=> isActive ? "category-active" : "category"}>
-                  
-                    Noroeste
-                  
+                <NavLink to="/category/noroeste" className={({ isActive }) => isActive ? "category-active" : "category"}>
+
+                  Noroeste
+
                 </NavLink>
               </ul>
               {/* Nav Icons */}

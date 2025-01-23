@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting }) => {
   const { idCategory } = useParams();
   const collectionName = collection(db, "products");
 
-  // Fetch all products
+  // Obtener todos los productos
   const getProducts = async () => {
     try {
       const dataDb = await getDocs(collectionName);
@@ -25,15 +25,15 @@ const ItemListContainer = ({ greeting }) => {
       });
 
       console.log(data);
-      setProducts(data); // Update state with all products
-      setLoading(false); // Hide loading spinner after data is fetched
+      setProducts(data); // Actualizar el estado con todos los productos
+      setLoading(false); // Ocultar el spinner de carga después de obtener los datos
     } catch (error) {
       console.log(error);
-      setLoading(false); // Hide loading spinner if an error occurs
+      setLoading(false); // Ocultar el spinner de carga si ocurre un error
     }
   };
 
-  // Fetch products filtered by category
+  // Obtener productos filtrados por categoría
   const getProductsByCategory = async () => {
     try {
       const q = query(collectionName, where("category", "==", idCategory));
@@ -44,22 +44,22 @@ const ItemListContainer = ({ greeting }) => {
       });
 
       console.log(data);
-      setProducts(data); // Update state with filtered products
-      setLoading(false); // Hide loading spinner after data is fetched
+      setProducts(data); // Actualizar el estado con productos filtrados
+      setLoading(false); // Ocultar el spinner de carga después de obtener los datos
     } catch (error) {
       console.log(error);
-      setLoading(false); // Hide loading spinner if an error occurs
+      setLoading(false); // Ocultar el spinner de carga si ocurre un error
     }
   };
 
   useEffect(() => {
-    setLoading(true); // Show loading spinner before fetching data
+    setLoading(true); // Mostrar el spinner de carga antes de obtener los datos
     if (idCategory) {
-      getProductsByCategory(); // Fetch products filtered by category if idCategory exists
+      getProductsByCategory(); // Obtener productos filtrados por categoría si existe idCategory
     } else {
-      getProducts(); // Fetch all products if no idCategory is provided
+      getProducts(); // Obtener todos los productos si no se proporciona idCategory
     }
-  }, [idCategory]); // Re-run effect when idCategory changes
+  }, [idCategory]); // Volver a ejecutar el efecto cuando cambia idCategory
 
   return (
     <div className="itemlistcontainer">
